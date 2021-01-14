@@ -36,6 +36,10 @@ public class BrandController {
         Integer id = ser.addData(brand);
         return ReponseData.success(id);
     }
+
+    /*
+    *
+    * */
     @PostMapping("updateDate")
     public ReponseData updateDate(Brand brand){
         ser.updateDate(brand);
