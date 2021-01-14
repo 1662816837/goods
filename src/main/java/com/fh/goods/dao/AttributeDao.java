@@ -23,4 +23,8 @@ public interface AttributeDao {
     public void addData(Attribute attribute);
     @Update("update  goods_attribute set name = #{name},nameCH = #{nameCH},typeId = #{typeId},type = #{type},isSKU = #{isSKU},author = #{author},updateDate = #{updateDate} where id = #{id}")
     public void updateData(Attribute attribute);
+    @Update("update goods_attribute set isDel=1 where id=#{id}")
+    public void updateDataById(Integer id);
+    @Select("select * from goods_attribute where id = #{id}")
+    public Attribute queryDataById(Integer id);
 }

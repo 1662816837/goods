@@ -11,4 +11,8 @@ public interface AttributeService {
     public Integer addData(Attribute attribute);
 
     public void updateData(Attribute attribute);
+
+    public void updateDataById(Integer id);
+
+    public Attribute queryDataById(Integer id);
 }

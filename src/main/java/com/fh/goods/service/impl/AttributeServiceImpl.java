@@ -45,4 +45,15 @@ public class AttributeServiceImpl implements AttributeService {
         attribute.setAuthor("admin");
         dao.updateData(attribute);
     }
+
+    @Override
+    public void updateDataById(Integer id) {
+        dao.updateDataById(id);
+    }
+
+    @Override
+    public Attribute queryDataById(Integer id) {
+        Attribute attribute = dao.queryDataById(id);
+        return attribute;
+    }
 }

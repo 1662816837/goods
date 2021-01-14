@@ -45,4 +45,17 @@ public class AttributeController {
         ser.updateData(attribute);
         return ReponseData.success(null);
     }
+    @PostMapping("updateDataById")
+    public ReponseData updateDataById(Integer id){
+        if (id==0){
+            return ReponseData.error("id为必传项");
+        }
+        ser.updateDataById(id);
+        return ReponseData.success(null);
+    }
+    @PostMapping("queryDataById")
+    public ReponseData queryDataById(Integer id){
+        Attribute attribute = ser.queryDataById(id);
+        return ReponseData.success(attribute);
+    }
 }
