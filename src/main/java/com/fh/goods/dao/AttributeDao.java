@@ -5,6 +5,7 @@ import com.fh.goods.entity.vo.PageParam;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -20,4 +21,6 @@ public interface AttributeDao {
     @Options(useGeneratedKeys=true, keyProperty="id", keyColumn="id")
     @Insert("insert into goods_attribute (name,nameCH,typeId,type,isSKU,isDel,createDate,author) values (#{name},#{nameCH},#{typeId},#{type},#{isSKU},#{isDel},#{createDate},#{author})")
     public void addData(Attribute attribute);
+    @Update("update  goods_attribute set name = #{name},nameCH = #{nameCH},typeId = #{typeId},type = #{type},isSKU = #{isSKU},author = #{author},updateDate = #{updateDate} where id = #{id}")
+    public void updateData(Attribute attribute);
 }

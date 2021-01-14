@@ -9,4 +9,6 @@ public interface AttributeService {
     public Map queryData(PageParam param);
 
     public Integer addData(Attribute attribute);
+
+    public void updateData(Attribute attribute);
 }

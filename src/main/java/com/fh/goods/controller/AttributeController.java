@@ -37,4 +37,12 @@ public class AttributeController {
         Integer id = ser.addData(attribute);
         return ReponseData.success(id);
     }
+    @PostMapping("updateData")
+    public ReponseData updateData(Attribute attribute){
+        if (attribute.getId()==null){
+            return ReponseData.error("id为必传项");
+        }
+        ser.updateData(attribute);
+        return ReponseData.success(null);
+    }
 }

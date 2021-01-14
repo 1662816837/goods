@@ -38,4 +38,11 @@ public class AttributeServiceImpl implements AttributeService {
         dao.addData(attribute);
         return attribute.getId();
     }
+
+    @Override
+    public void updateData(Attribute attribute) {
+        attribute.setUpdateDate(new Date());
+        attribute.setAuthor("admin");
+        dao.updateData(attribute);
+    }
 }
