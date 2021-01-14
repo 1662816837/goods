@@ -2,12 +2,12 @@ package com.fh.goods.service.impl;
 
 import com.fh.goods.dao.AttributeDao;
 import com.fh.goods.entity.po.Attribute;
-import com.fh.goods.entity.po.Brand;
 import com.fh.goods.entity.vo.PageParam;
 import com.fh.goods.service.AttributeService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,5 +28,14 @@ public class AttributeServiceImpl implements AttributeService {
         map.put("count",count);
         map.put("list",list);
        return map;
+    }
+
+    @Override
+    public Integer addData(Attribute attribute) {
+        attribute.setCreateDate(new Date());
+        attribute.setAuthor("admin");
+        attribute.setIsDel(0);
+        dao.addData(attribute);
+        return attribute.getId();
     }
 }
