@@ -17,6 +17,9 @@ import java.util.Map;
 public class AttributeController {
     @Resource
     private AttributeService ser;
+    /*
+    *
+    * */
     @GetMapping("queryData")
     public ReponseData queryData(PageParam param){
         if (param.getPage()==null){
