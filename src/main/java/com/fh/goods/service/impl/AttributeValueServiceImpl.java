@@ -28,4 +28,15 @@ public class AttributeValueServiceImpl implements AttributeValueService {
     public void updateData(AttributeValue attributeValue) {
         dao.updateData(attributeValue);
     }
+
+    @Override
+    public void updataById(Integer id) {
+       dao.updataById(id);
+    }
+
+    @Override
+    public AttributeValue queryDataById(Integer id) {
+        AttributeValue attributeValue = dao.queryDataById(id);
+        return attributeValue;
+    }
 }

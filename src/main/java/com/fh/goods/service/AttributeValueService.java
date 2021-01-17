@@ -10,4 +10,8 @@ public interface AttributeValueService {
     public void addData(AttributeValue attributeValue);
 
     public void updateData(AttributeValue attributeValue);
+
+    public void updataById(Integer id);
+
+    public AttributeValue queryDataById(Integer id);
 }

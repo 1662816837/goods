@@ -41,4 +41,14 @@ public class AttributeValueController {
         ser.updateData(attributeValue);
        return ReponseData.success(null);
     }
+    @PostMapping("updataById")
+    public ReponseData updataById(Integer id){
+        ser.updataById(id);
+        return ReponseData.success(null);
+    }
+    @PostMapping("queryDataById")
+    public ReponseData queryDataById(Integer id){
+        AttributeValue attributeValue = ser.queryDataById(id);
+        return ReponseData.success(attributeValue);
+    }
 }
