@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface AttributeValueService {
     public List<AttributeValue> queryDate(Integer attId);
+
+    public void addData(AttributeValue attributeValue);
+
+    public void updateData(AttributeValue attributeValue);
 }

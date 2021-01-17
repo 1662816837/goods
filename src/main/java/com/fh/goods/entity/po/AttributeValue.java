@@ -5,6 +5,15 @@ public class AttributeValue {
     private String name;
     private String nameCH;
     private Integer attId;
+    private Integer isdel;
+
+    public Integer getIsdel() {
+        return isdel;
+    }
+
+    public void setIsdel(Integer isdel) {
+        this.isdel = isdel;
+    }
 
     public Integer getId() {
         return id;

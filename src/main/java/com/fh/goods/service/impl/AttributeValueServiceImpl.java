@@ -18,4 +18,14 @@ public class AttributeValueServiceImpl implements AttributeValueService {
         List<AttributeValue> list = dao.queryDate(attId);
         return list;
     }
+
+    @Override
+    public void addData(AttributeValue attributeValue) {
+        dao.addData(attributeValue);
+    }
+
+    @Override
+    public void updateData(AttributeValue attributeValue) {
+        dao.updateData(attributeValue);
+    }
 }

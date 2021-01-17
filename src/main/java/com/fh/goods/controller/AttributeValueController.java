@@ -25,4 +25,20 @@ public class AttributeValueController {
         List<AttributeValue> list = ser.queryDate(attId);
         return ReponseData.success(list);
     }
+    @PostMapping("addData")
+    public ReponseData addData(AttributeValue attributeValue){
+        if (attributeValue==null){
+            return ReponseData.success("最少添加一项");
+        }
+        ser.addData(attributeValue);
+        return ReponseData.success(null);
+    }
+    @PostMapping("updateData")
+    public ReponseData updateData(AttributeValue attributeValue){
+        if (attributeValue.getId()==null){
+            return ReponseData.success("id为必传项");
+        }
+        ser.updateData(attributeValue);
+       return ReponseData.success(null);
+    }
 }
