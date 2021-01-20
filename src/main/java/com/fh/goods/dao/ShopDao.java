@@ -25,5 +25,6 @@ public interface ShopDao {
             " and isDel = 0 " +
             "limit #{startIndex},#{limit}    </script>")
     public List<Shop> queryDataLimit(PageParam param);
-
+    @Update("update shop_commodity set isDel = 1 where id = #{id}")
+    public void updateDataById(Integer id);
 }

@@ -11,4 +11,6 @@ public interface ShopService {
     public Map queryDataLimit(PageParam param);
 
     public void updataData(Shop shop);
+
+    public void updateDataById(Integer id);
 }

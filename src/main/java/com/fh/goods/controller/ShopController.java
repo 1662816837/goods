@@ -47,4 +47,10 @@ public class ShopController {
        ser.updataData(shop);
        return ReponseData.success(null);
     }
+
+    @PostMapping("updateDataById")
+    public ReponseData updateDataById(Integer id){
+       ser.updateDataById(id);
+       return ReponseData.success(null);
+    }
 }

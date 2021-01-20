@@ -45,4 +45,9 @@ public class ShopServiceImpl implements ShopService {
         shop.setAuthor("admin");
         dao.updataData(shop);
     }
+
+    @Override
+    public void updateDataById(Integer id) {
+        dao.updateDataById(id);
+    }
 }
