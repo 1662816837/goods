@@ -57,4 +57,10 @@ public class BrandServiceImpl implements BrandService {
         Brand brand = dao.queryDataById(id);
         return brand;
     }
+
+    @Override
+    public List<Brand> queryDataAll() {
+        List<Brand> list = dao.queryDataAll();
+        return list;
+    }
 }

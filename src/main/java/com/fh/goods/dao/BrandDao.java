@@ -13,10 +13,11 @@ import java.util.Map;
 public interface BrandDao {
     @Select("<script> select count(1) from goods_brand where 1=1 " +
             "<if test='name != null and name != &quot;&quot;'> and name like CONCAT('%',#{name},'%')</if>" +
-            "</script>")
+            " and isdel = 0</script>")
     public Long queryCount(PageParam param);
     @Select("<script> select * from goods_brand where 1=1 " +
             "<if test='name != null and name != &quot;&quot;'> and name like CONCAT('%',#{name},'%')</if>" +
+            " and isdel = 0 " +
             " order by ord  limit #{startIndex},#{limit}  </script>")
     public List<Brand> queryData(PageParam param);
 
@@ -29,4 +30,6 @@ public interface BrandDao {
     public void updateDateFalse(Brand brand);
     @Select("select * from goods_brand where id = #{id}")
     public Brand queryDataById(Integer id);
+    @Select("select * from goods_brand where 1=1 ")
+    public List<Brand> queryDataAll();
 }

@@ -14,7 +14,7 @@ public interface AttributeValueDao {
     public void addData(AttributeValue attributeValue);
     @Update("update  attributeValue set name = #{name},nameCH = #{nameCH} where id = #{id}")
     public void updateData(AttributeValue attributeValue);
-    @Update("update attributeValue set isdel = 1")
+    @Update("update attributeValue set isdel = 1 where id = #{id}")
     public void updataById(Integer id);
     @Select("select * from attributeValue where id = #{id}")
     public AttributeValue queryDataById(Integer id);

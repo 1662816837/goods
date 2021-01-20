@@ -56,4 +56,10 @@ public class AttributeServiceImpl implements AttributeService {
         Attribute attribute = dao.queryDataById(id);
         return attribute;
     }
+
+    @Override
+    public List<Attribute> queryDataBuTypeId(Integer typeId) {
+        List<Attribute> list = dao.queryDataBuTypeId(typeId);
+        return list;
+    }
 }

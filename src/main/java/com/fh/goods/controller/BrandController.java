@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -38,6 +39,11 @@ public class BrandController {
     public ReponseData addData(Brand brand){
         Integer id = ser.addData(brand);
         return ReponseData.success(id);
+    }
+    @PostMapping("queryDataAll")
+    public ReponseData queryDataAll(){
+        List<Brand> list = ser.queryDataAll();
+        return ReponseData.success(list);
     }
 
     /*

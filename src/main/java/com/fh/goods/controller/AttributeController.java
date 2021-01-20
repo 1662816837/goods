@@ -7,6 +7,7 @@ import com.fh.goods.service.AttributeService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -36,6 +37,11 @@ public class AttributeController {
         }
         Integer id = ser.addData(attribute);
         return ReponseData.success(id);
+    }
+    @PostMapping("queryDataBuTypeId")
+    public ReponseData queryDataBuTypeId(Integer typeId){
+        List<Attribute> list = ser.queryDataBuTypeId(typeId);
+        return ReponseData.success(list);
     }
     @PostMapping("updateData")
     public ReponseData updateData(Attribute attribute){

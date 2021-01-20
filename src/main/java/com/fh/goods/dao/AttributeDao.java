@@ -28,4 +28,6 @@ public interface AttributeDao {
     public void updateDataById(Integer id);
     @Select("select * from goods_attribute where id = #{id}")
     public Attribute queryDataById(Integer id);
+    @Select("select * from goods_attribute where typeId = #{typeId}")
+    public List<Attribute> queryDataBuTypeId(Integer typeId);
 }

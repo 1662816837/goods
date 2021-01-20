@@ -3,6 +3,7 @@ package com.fh.goods.service;
 import com.fh.goods.entity.po.Brand;
 import com.fh.goods.entity.vo.PageParam;
 
+import java.util.List;
 import java.util.Map;
 
 public interface BrandService {
@@ -15,4 +16,6 @@ public interface BrandService {
     public void updateDateFalse(Brand brand);
 
     public Brand queryDataById(Integer id);
+
+    public List<Brand> queryDataAll();
 }
