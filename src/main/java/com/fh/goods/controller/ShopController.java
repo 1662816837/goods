@@ -39,4 +39,12 @@ public class ShopController {
         ser.addData(shop);
         return ReponseData.success(null);
     }
+    @PostMapping("updataData")
+    public ReponseData updataData(Shop shop){
+       if (shop.getId()==null){
+           return ReponseData.error("id为必传项，不能为空");
+       }
+       ser.updataData(shop);
+       return ReponseData.success(null);
+    }
 }

@@ -9,4 +9,6 @@ public interface ShopService {
     public void addData(Shop shop);
 
     public Map queryDataLimit(PageParam param);
+
+    public void updataData(Shop shop);
 }

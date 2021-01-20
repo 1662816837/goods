@@ -38,4 +38,11 @@ public class ShopServiceImpl implements ShopService {
         map.put("list",list);
         return map;
     }
+
+    @Override
+    public void updataData(Shop shop) {
+        shop.setUpdateDate(new Date());
+        shop.setAuthor("admin");
+        dao.updataData(shop);
+    }
 }
