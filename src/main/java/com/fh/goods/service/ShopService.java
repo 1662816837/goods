@@ -13,4 +13,6 @@ public interface ShopService {
     public void updataData(Shop shop);
 
     public void updateDataById(Integer id);
+
+    public void addDataSku(Shop shop, String attr, String sku);
 }

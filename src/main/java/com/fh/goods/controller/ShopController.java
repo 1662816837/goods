@@ -31,6 +31,15 @@ public class ShopController {
     return ReponseData.success(map);
     }
 
+
+    //商品新增  完整】
+    @PostMapping("addDataSku")
+    public ReponseData addDataSku(Shop shop,String attr,String sku){
+       //传过来 步骤一的form表单数据  attr是我们的spu数据   sku是我们的选项选择完成只收生成的sku表格数据
+       ser.addDataSku(shop,attr,sku);
+    return ReponseData.success(null);
+    }
+
     @PostMapping("addData")
     public ReponseData addData(Shop shop){
        if (shop==null){

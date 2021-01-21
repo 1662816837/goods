@@ -3,6 +3,7 @@ package com.fh.goods.dao;
 import com.fh.goods.entity.po.Shop;
 import com.fh.goods.entity.vo.PageParam;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -11,6 +12,7 @@ import java.util.List;
 public interface ShopDao {
     @Insert("insert  into shop_commodity  (name,title,bandId,typeId,productdecs,price,imgPath,stocks,sortNum,createDate,author,isDel)" +
             " value(#{name},#{title},#{bandId},#{typeId},#{productdecs},#{price},#{imgPath},#{stocks},#{sortNum},#{createDate},#{author},#{isDel})")
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     public void addData(Shop shop);
 
     @Update("update shop_commodity set name=#{name},title=#{title},bandId=#{bandId},typeId=#{typeId},productdecs=#{productdecs},price=#{price},imgPath=#{imgPath},stocks=#{stocks},sortNum=#{sortNum},author=#{author},updateDate=#{updateDate} where id = #{id}")
