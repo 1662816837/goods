@@ -30,6 +30,11 @@ public class ShopController {
        Map map = ser.queryDataLimit(param);
     return ReponseData.success(map);
     }
+    @PostMapping("queryDataById")
+    public ReponseData queryDataById(Integer id){
+        Shop shop = ser.queryDataById(id);
+       return  ReponseData.success(shop);
+    }
 
 
     //商品新增  完整】

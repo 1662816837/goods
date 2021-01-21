@@ -98,4 +98,10 @@ public class ShopServiceImpl implements ShopService {
         dao2.adds(adList);
 
     }
+
+    @Override
+    public Shop queryDataById(Integer id) {
+        Shop shop = dao.queryDataById(id);
+        return shop;
+    }
 }

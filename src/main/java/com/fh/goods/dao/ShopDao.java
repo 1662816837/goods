@@ -22,11 +22,13 @@ public interface ShopDao {
             "<if test='name != null and name != &quot;&quot;'> and name like CONCAT('%',#{name},'%')</if>" +
             " and isDel = 0 </script>")
     public Long queryCount(PageParam param);
-    @Select("<script> select * from goods_attribute where 1=1 " +
+    @Select("<script> select * from shop_commodity where 1=1 " +
             "<if test='name != null and name != &quot;&quot;'> and name like CONCAT('%',#{name},'%')</if>" +
             " and isDel = 0 " +
             "limit #{startIndex},#{limit}    </script>")
     public List<Shop> queryDataLimit(PageParam param);
     @Update("update shop_commodity set isDel = 1 where id = #{id}")
     public void updateDataById(Integer id);
+    @Select("select * from shop_commodity where id = #{id}")
+    public Shop queryDataById(Integer id);
 }
